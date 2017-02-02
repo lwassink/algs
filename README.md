@@ -5,7 +5,7 @@ Luke, Louis and Robert, codin away.
 ## Plans
 
 ### Data Structures
-* AVL Tree
+* [AVL Tree][avl_trees]
 * B-Tree
 * Red-Black Tree
 * Bloom Filter
