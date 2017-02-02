@@ -1,0 +1,29 @@
+
+public class IQueue<Item> implements Iterable<Item> {
+	private Node first;
+	private Node last;
+	private int size;
+	
+	private class Node {
+		private Item value;
+		private Node next;
+		
+		public Node(Item value) {
+			this.value = value;
+			this.next = null;
+		}
+	}
+	
+	public IQueue() {
+		this.first = null;
+		this.last = null;
+	}
+	
+	public void enqueue(Item x) {
+		newNode = new Node(x);
+		if (last == null) {
+			first = newNode;
+			last = newNode;
+		}
+	}
+}

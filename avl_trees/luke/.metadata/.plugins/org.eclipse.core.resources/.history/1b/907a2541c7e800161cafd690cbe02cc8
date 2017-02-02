@@ -1,0 +1,14 @@
+
+public class IQueue<Item> implements Iterable<Item> {
+	private Node first;
+	
+	private class Node {
+		private Item value;
+		private Node next;
+		
+		public Node(Item value) {
+			this.value = value;
+			this.next = null;
+		}
+	}
+}

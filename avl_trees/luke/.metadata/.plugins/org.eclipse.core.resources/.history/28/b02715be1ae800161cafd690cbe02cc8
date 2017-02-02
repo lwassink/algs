@@ -1,0 +1,12 @@
+
+public class AVLTree<Key extends Comparable<Key>, Value> {
+	private class Node {
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

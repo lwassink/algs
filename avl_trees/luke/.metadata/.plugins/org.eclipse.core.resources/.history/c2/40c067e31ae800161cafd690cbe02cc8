@@ -1,0 +1,19 @@
+
+public class AVLTree<Key extends Comparable<Key>, Value> {
+	private class Node {
+		private Key key;
+		private Value val;
+		private int size;
+		private Node left, right;
+		
+		public Node(Key key, Value val) {
+			this.key = key;
+		}
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

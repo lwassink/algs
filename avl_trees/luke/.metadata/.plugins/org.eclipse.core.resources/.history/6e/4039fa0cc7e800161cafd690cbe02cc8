@@ -1,0 +1,4 @@
+
+public class IQueue<Item> implements Iterable<Item> {
+	
+}

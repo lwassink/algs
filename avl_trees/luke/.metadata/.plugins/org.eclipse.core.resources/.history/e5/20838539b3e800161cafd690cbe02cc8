@@ -1,0 +1,44 @@
+
+public class AVLTree<Key extends Comparable<Key>, Value> {
+	private Node root;
+
+	private class Node {
+		private Key key;
+		private Value val;
+		private int size;
+		private Node left, right;
+		
+		public Node(Key key, Value val, int size) {
+			this.key = key;
+			this.val = val;
+			this.size = size;
+		}
+	}
+	
+	public AVLTree() {
+		root = null;
+	}
+	
+	public int size() {
+		return size(root);
+	}
+
+	private int size(Node node) {
+		return node.size;
+	}
+	
+	public Value get(Key key) {
+		return get(root, key);
+	}
+	
+	private Value get(Node node, Key k) {
+		if (node == null) return null;
+		int cmp = node.key.compareTo(k);
+		if (cmp < 0) return get(node.left, k);
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		AVLTree<Integer, String> test = new AVLTree<Integer, String>();
+	}
+}
