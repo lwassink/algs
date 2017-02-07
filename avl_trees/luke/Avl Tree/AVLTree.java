@@ -1,4 +1,3 @@
-
 public class AVLTree<Key extends Comparable<Key>, Value> {
 	private Node root;
 
@@ -8,7 +7,7 @@ public class AVLTree<Key extends Comparable<Key>, Value> {
 		private int size;
 		private Node left, right;
 		private int height;
-		
+
 		public Node(Key key, Value val, int size) {
 			this.key = key;
 			this.val = val;
@@ -16,11 +15,11 @@ public class AVLTree<Key extends Comparable<Key>, Value> {
 			this.height = 0;
 		}
 	}
-	
+
 	public AVLTree() {
 		root = null;
 	}
-	
+
 	public int size() {
 		return size(root);
 	}
@@ -29,24 +28,24 @@ public class AVLTree<Key extends Comparable<Key>, Value> {
 		if (node == null) return 0;
 		return node.size;
 	}
-	
+
 	public int height() {
 		return height(root);
 	}
-	
+
 	private int height(Node node) {
 		if (node == null) return -1;
 		return node.height;
 	}
-	
+
 	private int balance(Node node) {
 		return height(node.right) - height(node.left);
 	}
-	
+
 	public Value get(Key k) {
 		return get(root, k);
 	}
-	
+
 	private Value get(Node node, Key k) {
 		if (node == null) return null;
 		int cmp = k.compareTo(node.key);
@@ -54,39 +53,39 @@ public class AVLTree<Key extends Comparable<Key>, Value> {
 		else if (cmp > 0)	return get(node.right, k);
 		else             	return node.val;
 	}
-	
+
 	public void put(Key k, Value v) {
 		root = put(root, k, v);
 	}
-	
+
 	private Node put(Node node, Key k, Value v) {
 		if (node == null) return new Node(k, v, 1);
 		int cmp = k.compareTo(node.key);
-		
+
 		if (cmp < 0) node.left = put(node.left, k, v);
 		else if (cmp > 0) node.right = put(node.right, k, v);
 		else node.val = v;
-		
+
 		node = rebalance(node);
-		
+
 		node.size = size(node.left) + size(node.right) + 1;
 		node.height = Math.max(height(node.left), height(node.right)) + 1;
 		return node;
 	}
-	
+
 	public Iterable<Key> inOrder() {
 		Queue<Key> queue = new Queue<Key>();
 		inOrder(root, queue);
 		return queue;
 	}
-	
+
 	private void inOrder(Node x, Queue<Key> queue) {
 		if (x == null) return;
 		inOrder(x.left, queue);
 		queue.enqueue(x.key);
 		inOrder(x.right, queue);
 	}
-	
+
 	private Node rebalance(Node node) {
 		if (balance(node) < -1) {
 			if (balance(node.left) > 0) node.left = rotateLeft(node.left);
@@ -98,7 +97,7 @@ public class AVLTree<Key extends Comparable<Key>, Value> {
 		}
 		return node;
 	}
-	
+
 	private Node rotateLeft(Node x) {
 		if (x.right == null) return x;
 		Node right = x.right;
@@ -106,7 +105,7 @@ public class AVLTree<Key extends Comparable<Key>, Value> {
 		right.left = x;
 		return right;
 	}
-	
+
 	private Node rotateRight(Node x) {
 		if (x.left == null) return x;
 		Node left = x.left;
@@ -139,11 +138,11 @@ public class AVLTree<Key extends Comparable<Key>, Value> {
 		System.out.println(test.isBST());
 		System.out.println(test.height());
 	}
-	
+
 	public boolean isBST() {
 		return isBST(root, null, null);
 	}
-	
+
 	private boolean isBST(Node x, Key min, Key max) {
 		if (x == null) return true;
 		if (min != null && x.key.compareTo(min) <= 0) return false;
