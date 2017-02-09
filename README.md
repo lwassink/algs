@@ -11,6 +11,8 @@ Luke, Louis and Robert, codin away.
 * Bloom Filter
 * Trie
 * Heap
+* Fibonaci Heap
+* Van Emde, Boas Tree (maybe - it's kind of exotic)
 
 ### Algorithms
 * Quickselect
