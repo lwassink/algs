@@ -1,4 +1,4 @@
-import AvlNode from './avl-node.js';
+import AvlNode from './avl-node';
 
 export default class AvlTree {
   constructor() {
@@ -10,7 +10,8 @@ export default class AvlTree {
     if (!this.root) {
       this.root = newNode;
     } else {
-      this.root.addChild(newNode);
+      const lastStop = this.root.addChild(newNode);
+      this.rebalance(lastStop);
     }
     return newNode;
   }
@@ -19,6 +20,7 @@ export default class AvlTree {
     if (this.root) {
       return this.root.find(key);
     }
+    return null;
   }
 
   size(node = this.root) {
@@ -31,5 +33,16 @@ export default class AvlTree {
 
   getBalance(node = this.root) {
     return node.getBalance();
+  }
+
+  rebalance(node) {
+    let currentNode = node;
+    while (currentNode !== this.root) {
+      currentNode = currentNode.parent;
+      currentNode.rebalance();
+      while (this.root.parent) {
+        this.root = this.root.parent;
+      }
+    }
   }
 }
