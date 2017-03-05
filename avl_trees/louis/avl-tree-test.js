@@ -11,8 +11,8 @@ console.log(`Left is correctly set: ${tree.root.left.value === 'second'}`);
 console.log(`Right is correctly set: ${tree.root.right.value === 'third'}`);
 
 console.log(`Find root: ${tree.get(root.key) === root}`);
-console.log(`Finds left: ${tree.get(root.left.key) === left}`)
-console.log(`Finds right: ${tree.get(root.right.key) === right}`)
+console.log(`Finds left: ${tree.get(root.left.key) === left}`);
+console.log(`Finds right: ${tree.get(root.right.key) === right}`);
 
 console.log(`Correct size: ${tree.size() === 3}`);
 
@@ -20,11 +20,11 @@ console.log(`Correct height: ${tree.height()}`);
 
 console.log(`Correct Balance: ${tree.getBalance() === 0}`);
 
-tree.put(17, 'fourth')
+tree.put(17, 'fourth');
 
 console.log(`Correct Balance at 1: ${tree.getBalance() === 1}`);
 
-tree.put(16, 'fifth')
+tree.put(16, 'fifth');
 
 console.log(`Correct Balance after 2: ${tree.getBalance() === 1}`);
 
