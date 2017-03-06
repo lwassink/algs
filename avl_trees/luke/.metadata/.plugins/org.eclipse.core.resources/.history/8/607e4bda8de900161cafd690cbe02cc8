@@ -114,14 +114,6 @@ public class AVLTree<Key extends Comparable<Key>, Value> {
 		left.right = x;
 		return left;
 	}
-	
-	public int rank(Key key) {
-		return rank(root, key);
-	}
-	
-	private int rank(Node node, Key key) {
-		
-	}
 
 	public static void main(String[] args) {
 		AVLTree<Integer, String> test = new AVLTree<Integer, String>();
