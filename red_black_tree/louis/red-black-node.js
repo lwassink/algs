@@ -69,14 +69,6 @@ class RedBlackNode {
     return this.right && this.right.isColor(RED);
   }
 
-  leftIsBlack() {
-    return this.left && this.left.isColor(BLACK);
-  }
-
-  rightIsBlack() {
-    return this.right && this.right.isColor(BLACK);
-  }
-
   leftLeftIsRed() {
     return this.left.left && this.left.leftIsRed();
   }
