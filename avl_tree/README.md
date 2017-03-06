@@ -1,6 +1,6 @@
 # AVL Trees
 
-This directory contains implimentations of AVL trees.
+This directory contains implementations of AVL trees.
 Here is a minimal API.
 
 * `put(key, val)` add a key-value pair to the tree
