@@ -10,11 +10,8 @@ class RedBlackTree {
   }
 
   put(key, value) {
-    if (!this.root) {
-      this.root = new RedBlackNode(key, value);
-      return this.root;
-    }
-    return this.handlePut(key, value, this.root);
+    if (!this.root) this.root = new RedBlackNode(key, value);
+    this.handlePut(key, value, this.root);
   }
 
   handlePut(key, value, node) {
