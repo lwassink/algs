@@ -31,7 +31,10 @@ class RedBlackTree {
       if (this.root === node) this.root = node.right;
       node = node.rotateLeft();
     }
-    if (node.leftIsRed() && node.leftLeftIsRed()) node = node.rotateRight();
+    if (node.leftIsRed() && node.leftLeftIsRed()) {
+      if (this.root === node) this.root = node.left;
+      node = node.rotateRight();
+    }
     if (node.leftIsRed() && node.rightIsRed()) node.flipColors();
 
     return node;
