@@ -6,8 +6,8 @@ Luke, Louis and Robert, codin away.
 
 ### Data Structures
 * [AVL Tree](avl_trees)
+* [Red-Black Tree](red_black_tree)
 * B-Tree
-* Red-Black Tree
 * Bloom Filter
 * Trie
 * Heap
